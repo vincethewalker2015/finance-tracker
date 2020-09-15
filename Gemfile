@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # Use Devise for user Authentication
 gem 'devise'
+# This Gem is used for installing Bootstrap Styled Devise forms
+gem 'devise-bootstrap-views', '~> 1.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
