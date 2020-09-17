@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 # This Gem is used for installing Bootstrap Styled Devise forms
 gem 'devise-bootstrap-views', '~> 1.0'
+# Use IEX Cloud for Stock Data Collection
+gem 'iex-ruby-client'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
