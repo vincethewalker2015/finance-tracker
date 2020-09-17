@@ -6,8 +6,12 @@ class Stock < ApplicationRecord
       #endpoint: 'https://cloud.iexapis.com/v1' -- This is the paid version
     
     #client.price(ticker_symbol)  #This is what is returned
+    begin # begin and rescue are used to call to the API to see if a value exists if not we can alert that no value exists
     new(ticker: ticker_symbol, name: client.company(ticker_symbol).company_name, last_price: client.price(ticker_symbol))
     # client.company / company_name / client.price are methods taken from the 'iex-ruby-client' gem document
+    rescue => exception
+      return nil
+    end
     
   end
 
