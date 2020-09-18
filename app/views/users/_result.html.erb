@@ -1,0 +1,12 @@
+<div class="results-block">
+  <%= render 'layouts/messages'%>
+</div>
+
+<% if @stock %>
+  <div class="card card-header results-block "> <!-- This section renders the stock views below the form -->
+    <strong>Symbol: </strong> <%= @stock.ticker %>
+    <strong>Name: </strong> <%= @stock.name %>
+    <strong>Price: </strong> <%= @stock.last_price %>
+    <!-- Might see an error " undefined method `ticker' for nil:NilClass " to resolve use <%# if @stock %>-->
+  </div>
+<% end %>

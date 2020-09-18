@@ -2,7 +2,7 @@
 <div class="search-area pt-5">
   <h3>Search Stocks</h3>
 
-  <%= form_tag '#', method: :get do %>
+  <%= form_tag search_stock_path, remote: true, method: :get do %> <!-- This shows the form and the Button, remote: true sets this up as an AJAX call -->
     <div class='form-group row'>
       <div class="col-sm-9 no-right-padding">
         <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %>
@@ -15,3 +15,10 @@
     </div>
   <% end %>
 </div>
+<div id="results">
+
+</div>
+
+<%= render "users/result"%>
+
+
