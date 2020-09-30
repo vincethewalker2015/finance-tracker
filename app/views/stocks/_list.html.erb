@@ -1,16 +1,14 @@
-<table class="table table-bordered table-hover col-sm-9">
+<% if !@tracked_stocks.empty? %>
+  <table class="table table-bordered table-hover col-sm-9">
     <thead>
-      <% unless current_user.stocks.count < 1 %>
         <tr>
           <th scope="col">Ticker</th>
           <th scope="col">Name</th>
           <th scope="col">Price</th>
           <th scope="col">Actions</th>
         </tr>
-      <% end %>
     </thead>
     <tbody>
-      
         <% @tracked_stocks.each do |stock| %>
           <tr>
             <th scope="row"><%= stock.ticker %></th>
@@ -19,8 +17,8 @@
             <td><%= 'Future Action' %></td>
           </tr>
         <% end %>
-      <% if current_user.stocks.count < 1 %>
+      <% else %>
         <h3><%= current_user.email %> - You are not Tracking any Stocks</h3>
-        <% end %>
     </tbody>
   </table>
+<% end %>
