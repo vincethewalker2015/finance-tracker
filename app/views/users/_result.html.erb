@@ -3,10 +3,23 @@
 </div>
 
 <% if @stock %>
-  <div class="card card-header results-block "> <!-- This section renders the stock views below the form -->
+  <div class="card card-header results-block mb-2"> <!-- This section renders the stock views below the form -->
     <strong>Symbol: </strong> <%= @stock.ticker %>
     <strong>Name: </strong> <%= @stock.name %>
     <strong>Price: </strong> <%= @stock.last_price %>
+    <% if current_user.can_track_stock?(@stock.ticker) %>
+      <%= link_to "Add to Portfolio", user_stocks_path(user: current_user, ticker: @stock.ticker), class: "btn btn-sm btn-success", method: :post %>
+      <% else %>
+        <span class="badge badge-danger">
+          You are already tracking
+          <% if !current_user.under_stock_limit? %> <!-- Remember these methods come from the User Model -->
+            10 Stocks!
+          <% end %>
+          <% if current_user.stock_already_tracked?(@stock.ticker) %>
+            this stock!
+          <% end %>
+        </span>
+    <% end %>
     <!-- Might see an error " undefined method `ticker' for nil:NilClass " to resolve use <%# if @stock %>-->
   </div>
 <% end %>

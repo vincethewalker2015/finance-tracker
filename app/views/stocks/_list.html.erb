@@ -1,0 +1,24 @@
+<% if !@tracked_stocks.empty? %>
+  <table class="table table-bordered table-hover col-sm-9">
+    <thead>
+        <tr>
+          <th scope="col">Ticker</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @tracked_stocks.each do |stock| %>
+          <tr>
+            <th scope="row"><%= stock.ticker %></th>
+            <td><%= stock.name %></td>
+            <td><%= stock.last_price %></td>
+            <td><%= link_to 'Remove', user_stock_path(stock) , method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-sm btn-danger small-button' %></td>
+          </tr>
+        <% end %>
+      <% else %>
+        <h3><%= current_user.email %> - You are not Tracking any Stocks</h3>
+    </tbody>
+  </table>
+<% end %>

@@ -17,3 +17,7 @@ import "@fortawesome/fontawesome-free/js/all";
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+$(document).on('turbolinks:load', function() {
+  $('.alert').delay(1000).fadeOut(4000);
+});
