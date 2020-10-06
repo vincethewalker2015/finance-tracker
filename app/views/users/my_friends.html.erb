@@ -1,0 +1,20 @@
+<h1>Friends</h1>
+
+
+<%= form_tag search_friend_path, remote: true, method: :get do %> <!-- This shows the form and the Button, remote: true sets this up as an AJAX call -->
+    <div class='form-group row'>
+      <div class="col-sm-9 no-right-padding">
+        <%= text_field_tag :friend, params[:friend], placeholder: "Get a Friend..", autofocus: true, class: "form-control form-control-lg" %>
+      </div>
+      <div class="col-sm-3 no-left-padding">
+        <%= button_tag type: :submit, class: "btn btn-success btn-lg" do %>
+           <i class="fa fa-search "></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+<div id="friend-results"></div>
+ <% if !@friends.empty? %>
+   <%= render 'friends/list' %>
+ <% end %>
