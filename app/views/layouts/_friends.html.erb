@@ -1,5 +1,0 @@
-<% if current_user %>
-  <% @friendships.each do |fr| %>
-    <%= link_to fr.friend.first_name, friendships_path(current_user) %>
-  <% end %>
-<% end %>
