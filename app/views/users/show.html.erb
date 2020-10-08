@@ -1,0 +1,30 @@
+<h2>User Details for: <%= @user.full_name%></h2>
+
+
+<div class="card card-header results-block">
+  <table class="col-md-12">
+    <tbody>
+      <tr>
+        <td><strong>Name: </strong> <%= @user.full_name %></td>
+        <td><strong>Email: </strong> <%= @user.email %></td>
+        <td>
+          <% if current_user.not_friends_with?(@user.id) %>
+            <%= link_to "Follow #{@user.first_name} ?", friendships_path(friend: @user),
+                          class: "btn btn-sm btn-success", method: :post %>
+          <% else %>
+            <span class="badge badge-primary">
+              You are friends
+            </span>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h3><%= @user.first_name %> is Tracking: <span class="badge badge-secondary"><%= @user.stocks.count %> Stocks</span></h3>
+<% if !@tracked_stocks.empty? %>
+    <%= render 'stocks/list' %>
+<% else %>
+  Unfortunately <%= @user.first_name %> is not currently tracking any stocks...
+  <% end %>
+

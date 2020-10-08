@@ -11,7 +11,7 @@
             <td><strong>Name: </strong> <%= friend.full_name %></td>
               <td><strong>Email: </strong> <%= friend.email %></td>
               <td></td>
-              <td><%= link_to "View #{friend.first_name}'s Profile", "#",
+              <td><%= link_to "View #{friend.first_name}'s Profile", user_path(friend),
                                             class: "btn btn-primary btn-sm " %>
               </td>
               <td><% if current_user.not_friends_with?(friend.id) %> <!-- Method "not_friends_with?" - Created in User model -->
