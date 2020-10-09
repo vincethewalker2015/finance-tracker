@@ -16,9 +16,9 @@
              <td><%= friend.first_name %></td>
              <td><%= friend.last_name %></td>
              <td><%= link_to "View #{friend.first_name}'s profile", user_path(friend), 
-                                           class: 'btn btn-sm btn-success' %>
+                                           class: "btn btn-sm btn-secondary" %>
              <%= link_to "Stop following #{friend.first_name}", friendship_path(friend), method: :delete, data: {confirm: 'Are you sure?'},
-                                           class: 'btn btn-sm btn-warning' %></td>
+                                           class: "btn btn-sm btn-dark" %></td>
            </tr>
          <% end %>
        </tbody>

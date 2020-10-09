@@ -2,9 +2,23 @@
 
 // Prevents the flash and alert messages from hiding behind the navbar
 
-// body {
-//   padding-top: 70px;
-// }
+body, .navbar{
+  background: #8e9eab;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+// JUMBOTRON
+.jumbotron {
+  background-image: asset-url("intro.png");
+  background-size: cover;
+  height: 400px;
+}
+
+.center {
+  text-align: center;
+}
 
 // FORM in Portfolio
 
@@ -57,8 +71,9 @@
 // NAVBAR
 // user name
 .nav-name {
-  padding-top: 15px;
-  margin-left: 5px;
+  padding: 12px;
+  font-size: 14px;
+  
 }
 
 // Friendships tab
@@ -66,4 +81,18 @@
  .friendships {
   margin-left: 350px;
   
+}
+
+// FOOTER
+
+// Footer
+.footer, .a {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  .footer-logo {
+    color: #343A40;
+  }
 }
