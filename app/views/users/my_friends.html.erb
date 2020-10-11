@@ -1,14 +1,14 @@
-<h1>Friends</h1>
+<span class="page-title"><h1 class="center">Friends</h1></span>
 
 <div class='search-area'>
-  <h3>Search Friends</h3>
+ <span class="page-title"> <h3>Search Friends</h3></span>
   <%= form_tag search_friend_path, remote: true, method: :get do %>
     <div class="form-group row">
       <div class="col-sm-9 no-right-padding">
         <%= text_field_tag :friend, params[:friend], placeholder: "Name or email", autofocus: true, class: "form-control form-control-lg" %>
       </div>
       <div class="col-sm-3 no-left-padding">
-        <%= button_tag type: :submit, class: "btn btn-success" do %>
+        <%= button_tag type: :submit, class: "btn btn-dark btn-lg ml-2" do %>
           <i class="fa fa-search "></i>
         <% end %>
       </div>

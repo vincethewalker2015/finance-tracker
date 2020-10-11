@@ -1,6 +1,6 @@
-<h1>My Portfolio for <%= current_user.full_name %></h1>
+<span class="page-title"><h1>My Portfolio for <%= current_user.full_name %></h1></span>
 <div class="search-area pt-5">
-  <h3>Search Stocks</h3>
+  <span class="page-title"><h3>Search Stocks</h3></span>
 
   <%= form_tag search_stock_path, remote: true, method: :get do %> <!-- This shows the form and the Button, remote: true sets this up as an AJAX call -->
     <div class='form-group row'>
@@ -8,7 +8,7 @@
         <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %>
       </div>
       <div class="col-sm-3 no-left-padding">
-        <%= button_tag type: :submit, class: "btn btn-success btn-lg" do %>
+        <%= button_tag type: :submit, class: "btn btn-dark btn-lg ml-2" do %>
            <i class="fa fa-search "></i>
         <% end %>
       </div>
