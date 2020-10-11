@@ -9,6 +9,11 @@ body, .navbar{
 
 }
 
+//Google fonts
+
+//Welcome Page
+
+
 // JUMBOTRON
 .jumbotron {
   background-image: asset-url("intro.png");
@@ -19,6 +24,8 @@ body, .navbar{
 .center {
   text-align: center;
 }
+
+
 
 // FORM in Portfolio
 
@@ -73,7 +80,16 @@ body, .navbar{
 .nav-name {
   padding: 12px;
   font-size: 14px;
-  
+}
+//fonts
+.nav-title {
+  font-family: 'Amaranth', sans-serif;
+}
+
+//Buttons 
+  //fonts
+.btn {
+  font-family: 'Baloo 2', cursive;
 }
 
 // Friendships tab
@@ -83,6 +99,21 @@ body, .navbar{
   
 }
 
+//WELCOME PAGE
+//fonts
+.founder {
+  font-family: 'Kalam', cursive;
+}
+
+// FORMS
+  //fonts
+  .form-group {
+    font-family: 'Baloo 2', cursive;
+  }
+
+  .page-title {
+    font-family: 'Amaranth', sans-serif;
+  }
 // FOOTER
 
 // Footer
